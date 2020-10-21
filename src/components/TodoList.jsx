@@ -3,13 +3,15 @@ import TodoForm from './TodoForm'
 
 
 function TodoList(props) {
-    const [todos, setTodos] =useState([]);
-console.log(props)
+    // todos is the state value itself, and setTodos is the function that updates the state value.
+    const [todos, setTodos] = React.useState([]);
+// console.log(props)
     
     return (
         <div>
             <h3></h3>
-            <TodoForm />
+            {/* i uncommented this out */}
+            {/* <TodoForm /> */}
         </div>
     )
 }

@@ -4,9 +4,14 @@ import './App.css';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
+//note for myself here change to class?
+// class App extends React.Component{
+  // state ={
+  // categories: []
+  // }
+// }
 
-
- function App () {
+  function App () {
   
   let [tasks, setTasks] = useState ([])
   let [categories, setCategories] = useState ([])
@@ -15,7 +20,7 @@ import TodoList from './components/TodoList';
   // console.log(categories);
   
   
-
+//  ComponentDidMount () => {}
   useEffect( () => {
     fetch("http://localhost:3000/categories")
    .then (res => res.json())

@@ -1,17 +1,25 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system,'Handlee' cursive, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
-code {
+/* code {
   font-family: 'Handlee', cursive, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+body{
+  margin: 0;
+  font-family: -apple-system,'Handlee' cursive
 }
 
 h1{
   font-family: 'Handlee', cursive;
 }
+
+
+
