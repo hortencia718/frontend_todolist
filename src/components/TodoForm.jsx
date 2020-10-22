@@ -5,7 +5,7 @@ import TodoList from './TodoList';
 
 
     function TodoForm(props){
-         console.log("this is props:", props)
+        //  console.log("this is props:", props)
          const[input, setInput] = React.useState('');
 
         let handleChange = evt => {
@@ -15,8 +15,8 @@ import TodoList from './TodoList';
        let handleSubmit = evt => {
             evt.preventDefault(); 
 
-            // setInput("");
-        };
+        //     setInput("");
+         };
 
 
         console.log(props.categories)
@@ -26,11 +26,7 @@ import TodoList from './TodoList';
                
           })
     
-        // let categoryArray=props.categories.map((singleCategory)=>{
-        //     return <TodoList    key={singleCategory.name}
-        //                       name={singleCategory.name} />        
-        //     })
-
+       
     
     //  todos is the state value itself, 
     // and setTodos is the function that updates the state value.
@@ -41,7 +37,7 @@ import TodoList from './TodoList';
             <form className='todo-form' onSubmit={handleSubmit}>
             <input
             // type='text'
-            placeholder='need to do... '
+            placeholder=' '
             value={input}
             name='text'
             className='todo-input'
@@ -50,13 +46,13 @@ import TodoList from './TodoList';
             <button className= "todo-button" type="submit">Category</button>
             {/* <button className= "todo-button" type="submit">add</button> */}
             <div className="category">
-            {categoryArray}
+            {/* {categoryArray} */}
                {/* hola people of earth */}
             </div>
-         
+           
             </form>
         );
     }
    
 
-    export default TodoForm
+    export default TodoForm;

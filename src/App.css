@@ -2,13 +2,7 @@
   text-align: center;
 }
 
-/*  */
 
- /* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  } 
-}  */
 
 .App-header {
   background-color: #7c7c7c;
@@ -21,3 +15,31 @@
   color: rgb(233, 133, 203);
 }
 
+#todo-form input{
+  background-color: aqua;
+  border: 0;
+  width: 300px;
+  height: 100px;
+  padding: 0 20px;
+  margin: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  color: deeppink;
+}
+#todo-form ::placeholder{
+  color: chartreuse;
+}
+
+#todo-form input:focus,#todo-form buttom:focus{
+  outline:none;
+}
+
+todo-form button{
+  height:50px;
+  width: 80px;
+  border-radius: 10px;
+  border: 0;
+  background-color: fuchsia;
+  cursor: pointer;
+  font-weight: bold;
+}

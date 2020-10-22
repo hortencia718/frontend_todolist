@@ -3,6 +3,7 @@ import './App.css';
 // importing components 
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import CategoryContainer from './components/CategoryContainer'
 
 //note for myself here change to class?
 // class App extends React.Component{
@@ -12,20 +13,33 @@ import TodoList from './components/TodoList';
 // }
 
   function App () {
+  //  let arrayOfCatergories= useState([])
+  let [categories, setCategories] = useState ([])
+     console.log(categories)
   
   let [tasks, setTasks] = useState ([])
-  let [categories, setCategories] = useState ([])
+  // let [categories, setCategories] = useState ([])
   let [list, setList] = useState ("")
   let [user, setUser] = useState ("hortencia")
-  // console.log(categories);
+  let [loading, setLoading] = useState (true)
+
   
+// test
+  // let handleClick =(evt) => {
+  //   setCategories([{
+  //     categoryName: "chicken",
+  //     shopping: [],
+  //     bought: 4
+  //   }])
+  // }
   
 //  ComponentDidMount () => {}
   useEffect( () => {
     fetch("http://localhost:3000/categories")
    .then (res => res.json())
    .then ((arrayOfCatergories) => {
-     setCategories(arrayOfCatergories)
+     setCategories(arrayOfCatergories) 
+     setLoading(false)
    })
   }, [])
   
@@ -33,15 +47,18 @@ import TodoList from './components/TodoList';
   
   // console.log("this is categories:", categories)
    return (
-    //  console.log("this is categories:", categories)
+   
     <div className=" todo-list App">
 
       <header className="App-header">
         <h1>Todo list</h1>
         <TodoForm categories={categories}/>
-        <TodoList task ={tasks}/>
-        {/* <List /> */}
-      
+     
+       < CategoryContainer categories= {categories}/>
+        {/* <TodoList tasks ={tasks} loading ={loading} categories={categories}/> */}
+        
+       <h1>hola</h1>
+       
       </header>
     </div>
    );
