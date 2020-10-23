@@ -4,7 +4,7 @@ import './App.css';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import CategoryContainer from './components/CategoryContainer'
-
+import { Select } from 'semantic-ui-react'
 //note for myself here change to class?
 // class App extends React.Component{
   // state ={
@@ -24,40 +24,60 @@ import CategoryContainer from './components/CategoryContainer'
   let [loading, setLoading] = useState (true)
 
   
-// test
-  // let handleClick =(evt) => {
-  //   setCategories([{
-  //     categoryName: "chicken",
-  //     shopping: [],
-  //     bought: 4
-  //   }])
-  // }
-  
-//  ComponentDidMount () => {}
-  useEffect( () => {
-    fetch("http://localhost:3000/categories")
-   .then (res => res.json())
-   .then ((arrayOfCatergories) => {
-     setCategories(arrayOfCatergories) 
-     setLoading(false)
-   })
-  }, [])
-  
 
   
-  // console.log("this is categories:", categories)
+
+  useEffect( () => {
+    fetch("http://localhost:3000/categories")
+      .then (res => res.json())
+      .then ((arrayOfCatergories) => {
+      setCategories(arrayOfCatergories) 
+      setLoading(false)
+   })
+  }, [])
+
+
+  
+    let handleSubmit = (input,dropdown) => {
+     
+      // debugger
+    //  fetch("http://localhost:3000/tasks",{
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       "Accept": "application/json"
+    //     },
+    //     body: JSON.stringify({
+    //       user_id: 1, 
+    //       category
+
+    //     })
+
+    //  })
+      
+ };
+
+
+    //  let handleChange = evt => {
+    //     setInput(evt.target.value);
+    //   console.log("hello")
+    // };      
+
+
+
+
    return (
    
     <div className=" todo-list App">
 
       <header className="App-header">
-        <h1>Todo list</h1>
-        <TodoForm categories={categories}/>
+        <h1 className="todolistmainname">Todo List</h1>
+        <TodoForm categories={categories}  handleSubmit ={ handleSubmit}/>
      
-       < CategoryContainer categories= {categories}/>
-        {/* <TodoList tasks ={tasks} loading ={loading} categories={categories}/> */}
+       {/* < CategoryContainer categories= {categories}/> */}
+        {/* <TodoList onChange ={handleInputChange}/> */}
         
-       <h1>hola</h1>
+       <h1></h1>
        
       </header>
     </div>

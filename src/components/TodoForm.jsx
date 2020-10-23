@@ -2,27 +2,50 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom'
 import TodoList from './TodoList';
+import { Select } from 'semantic-ui-react'
+
+
+
+// const CategoryOptions = [ { key: 'shopping ', value: 'shooping', text: shopping' },
+// { key: 'bz', value: 'bz', text: 'Belize' },
+// { key: 'bj', value: 'bj', text: 'Benin' },
+// ]]
+// const SelectExample = () => (
+//     <Select placeholder='Select your country' options={countryOptions} />
+//   )
+
 
 
     function TodoForm(props){
         //  console.log("this is props:", props)
          const[input, setInput] = React.useState('');
 
-        let handleChange = evt => {
+         const[dropdown, setDropdown ] = useState(0)
+         
+
+        let handleInputChange = (evt) => {
+            // debugger
             setInput(evt.target.value)
+           
         }
+            let handleDropdownChange = ( evt,dropdown) => {
+                setDropdown(dropdown.value)
+            }
 
-       let handleSubmit = evt => {
-            evt.preventDefault(); 
+            let handleSubmit =(evt) =>{
+                evt.preventDefault()
+                props.handleSubmit(input,dropdown)
+            }
 
-        //     setInput("");
-         };
 
-
-        console.log(props.categories)
-            let categoryArray = props.categories.map(cat =>{
+        // console.log(props.categories)
+            let categoryOptions = props.categories.map(cat =>{
           
-            return < TodoList category={cat.name}/>
+            return {
+                key: cat.id,
+                text: cat.name,
+                value: cat.id
+            }
                
           })
     
@@ -30,24 +53,34 @@ import TodoList from './TodoList';
     
     //  todos is the state value itself, 
     // and setTodos is the function that updates the state value.
+            console.log(props.categories)
 
        
+
+
         return (
-              
+            //   drop down
             <form className='todo-form' onSubmit={handleSubmit}>
+                <Select placeholder='Select your category' options={categoryOptions} onChange={handleDropdownChange} />
+
+              <br/>
+              <br/>
+              
             <input
             // type='text'
             placeholder=' '
             value={input}
             name='text'
             className='todo-input'
-            onChange={handleChange}
+            onChange={handleInputChange}
             />
-            <button className= "todo-button" type="submit">Category</button>
+            <button className= "todo-button" 
+            
+            type="submit">Add Task </button>
             {/* <button className= "todo-button" type="submit">add</button> */}
             <div className="category">
-            {/* {categoryArray} */}
-               {/* hola people of earth */}
+          
+             
             </div>
            
             </form>
