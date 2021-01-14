@@ -15,7 +15,7 @@ import { Select } from 'semantic-ui-react'
   function App () {
   //  let arrayOfCatergories= useState([])
   let [categories, setCategories] = useState ([])
-     console.log(categories)
+    //  console.log(categories)
   
   let [tasks, setTasks] = useState ([])
   // let [categories, setCategories] = useState ([])
@@ -38,24 +38,28 @@ import { Select } from 'semantic-ui-react'
 
 
   
-    let handleSubmit = (input,dropdown) => {
-     
-      // debugger
-    //  fetch("http://localhost:3000/tasks",{
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       "Accept": "application/json"
-    //     },
-    //     body: JSON.stringify({
-    //       user_id: 1, 
-    //       category
+    let handleSubmit = (input,dropdown)  => {
+    //  debugger
+    
+       fetch("http://localhost:3000/tasks",{
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+         },
+          body: JSON.stringify({
+           list_id: 4, 
+           category_id: dropdown,
+           name:input
 
-    //     })
-
-    //  })
+          })
+        })
+          .then(res=> console.log(res))
+    
+    
+   }
       
- };
+ 
 
 
     //  let handleChange = evt => {
@@ -68,14 +72,14 @@ import { Select } from 'semantic-ui-react'
 
    return (
    
-    <div className=" todo-list App">
+       <div className=" todo-list App">
 
-      <header className="App-header">
+        <header className="header">
         <h1 className="todolistmainname">Todo List</h1>
         <TodoForm categories={categories}  handleSubmit ={ handleSubmit}/>
      
        {/* < CategoryContainer categories= {categories}/> */}
-        {/* <TodoList onChange ={handleInputChange}/> */}
+        <TodoList/>
         
        <h1></h1>
        

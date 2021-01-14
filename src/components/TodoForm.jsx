@@ -22,19 +22,20 @@ import { Select } from 'semantic-ui-react'
 
          const[dropdown, setDropdown ] = useState(0)
          
-
+            // handle the change
         let handleInputChange = (evt) => {
             // debugger
             setInput(evt.target.value)
            
         }
+            // handle the dropdown menu
             let handleDropdownChange = ( evt,dropdown) => {
                 setDropdown(dropdown.value)
             }
-
+                // submit the change
             let handleSubmit =(evt) =>{
                 evt.preventDefault()
-                props.handleSubmit(input,dropdown)
+                props.handleSubmit(input, dropdown)
             }
 
 
@@ -59,16 +60,19 @@ import { Select } from 'semantic-ui-react'
 
 
         return (
-            //   drop down
-            <form className='todo-form' onSubmit={handleSubmit}>
+            //   drop down form 
+            <form 
+            className='todo-form' onSubmit={handleSubmit}>
                 <Select placeholder='Select your category' options={categoryOptions} onChange={handleDropdownChange} />
 
+              <br/>
               <br/>
               <br/>
               
             <input
             // type='text'
-            placeholder=' '
+           
+            placeholder='..... '
             value={input}
             name='text'
             className='todo-input'
@@ -78,8 +82,10 @@ import { Select } from 'semantic-ui-react'
             
             type="submit">Add Task </button>
             {/* <button className= "todo-button" type="submit">add</button> */}
-            <div className="category">
-          
+           <div className="rcorners-box">
+       
+             </div>
+            <div className="container">
              
             </div>
            

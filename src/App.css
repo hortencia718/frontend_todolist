@@ -1,82 +1,139 @@
-.App {
+.App header {
   text-align: center;
+ font-family: Handlee;
+ background-color: rgb(150, 146, 146);
+ align-items: center;
+ justify-content: center;
+ min-height: 100vh;
+ padding-top: 40px;
 
 }
 div.ui.selection.dropdown{
   background-color: goldenrod;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
- 
-}
-
-
-.App-header {
-  background-color: #656368;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: rgb(233, 170, 133);
   font-family:'Handlee', cursive;
+  color:rgb(238, 29, 137);
+  width:50%;
+
 }
 
-.App #todo-form input{
+
+input.todo-input{
+  width: 20rem;
+  color:rgb(241, 77, 134);
+  font-style: inherit;
+  /* height: 10px; */
+  padding: 14px;
+  margin-top: 80px;
+  margin-right: 12px;
+  font-size: 14px;
+  border-radius: 10px; 
+  outline-color: goldenrod;
+}
+
+
+/* .header {
+  background-color: #929096;
+   min-height: 100vh;
+   display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* font-size: 18px; */
+  /* color: rgb(58, 230, 184); */
+  /* font-family:'Handlee', cursive;  */
+/* }  */ 
+
+/* body{
+  background-color: rgb(183, 241, 183);
+} */
+
+/* .App #todo-form input{
   /* background-color: rgb(30, 230, 230); */
-  border: 0;
+  /* border: 0;
   width: 100px;
   height: 100px;
   padding: 0 20px;
   margin: 20px;
   font-size: 18px;
-  border-radius: 10px;
+  border-radius: 10px; */
   /* color: deeppink; */
-}
-#todo-form ::placeholder{
+/* } */ 
+
+
+/* #todo-form ::placeholder{
   color: rgb(235, 109, 218);
-}
+} */
 
-#todo-form input:focus,#todo-form buttom:focus{
+/* #todo-form input:focus,#todo-form buttom:focus{
   outline:none;
-}
-
-/* #todo-form button{
-  height:100px;
-  width: 80px;
-  border-radius: 10px;
-  border: 0;
-  color: fuchsia;
-  cursor: pointer;
-  font-weight: bold;
 } */
 
 
-
-  .todolistmainname{
+  h1.todolistmainname{
   color: rgb(233, 133, 203);
+  text-shadow: rgb(247, 240, 54) 2px 2px;
   font-family:'Handlee', cursive;
-  font-size: 80px;
+  font-size: 90px;
+  text-align: center;
+  
+  /* border-radius:20px ; */
+  
 }
 
-.App-header #TodoList {
+/* .App-header #TodoList {
   font-size: 20px;
-}
+} */
 /* thiis the inside of the spacebar for input  */
-.todo-input{
+/* .todo-input{
 color:rgb(255, 0, 234);
-}
+padding:2;
+} */
 
 
 /* this is to-do button */
-.todo-button{
+button.todo-button{
   color:rgb(218, 32, 196);
-}
+  font-family:'Handlee', cursive;
+  font-size:20px;
+  font-weight: bold;
+  padding: 10px;
+  margin: 4px;
+  width: 20%;
+  background: #bbb7b7;
+  border-radius: 1rem;
 
-.box {
-  background-color: red;
-  border-radius: 20px;
-  color: white;
-  padding: 2em;
-  }
-  
-  
+}
+/* box for  */
+ .rcorners-box:after{
+   content: "";
+   position: relative;
+   display: flex;
+   flex-wrap: wrap;
+ }
+
+    form.todo-form{
+      font-family:Handlee ;
+    } 
+
+    div.ui.selection.dropdown{
+      font-family: Handlee;
+      
+    }
+
+    /* input.todo-input{
+      width: 60%;
+    } */
+
+
+ .container{
+   padding: 0em;
+ }
+ .grid-container{
+   display: grid;
+
+ }
+
+ 
+ 
+
+ 
